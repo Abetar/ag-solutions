@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Styles/styles.css">
+    <link rel="icon" type="image/png" href="Images/AG_Solutions_Logo_2.png">
+    <title>AG Solutions</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="80" tabindex="0">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg p-4 sticky-top">
+        <div class="container-fluid">
+            <img src="Images/AG_Solutions_Logo_2.png" alt="Logo" width="80" height="80" class="me-2">
+            <a class="navbar-brand fw-bold" href="#">AG Solutions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+                    <li class="nav-item">
+                        <a class="nav-link active me-3" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active me-3" href="#nosotros">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active me-3" href="#faqs">Preguntas Frecuentes</a>
+                    </li>
+                </ul>
+                <button class="btn button_ag me-3" type="submit">Contacto</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Section 1 (Slogan) -->
+    <section class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-2 col-md-6 col-sm-12 d-flex flex-column align-items-start text-start">
+                <h1 class="slogan">
+                    Soluciones Digitales <br> Eficientes para tu Negocio
+                </h1>
+                <p class="text-muted">
+                    Automatización, soporte técnico y desarrollo web sin complicaciones. Haz más con menos esfuerzo.
+                </p>
+                <p>
+                    <a href="#servicios" class="btn" id="btn_link">
+                        Ver Servicios
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sections 2 (Image) -->
+    <section class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-8 offset-lg-2">
+                <img src="Images/coding.jpg" class="image_coding" alt="Servicios">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sections 3 (Servicios) -->
+    <section class="container mt-3" id="servicios">
+        <h2 class="mb-4">Servicios</h2>
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0">
+                    <img src="Images/coding1.jpg" class="card-img-top" alt="Automatización Inteligente">
+                    <div class="card-body">
+                        <h5 class="card-title">Automatización Inteligente</h5>
+                        <p class="card-text text-muted">Optimiza tareas repetitivas como extracción de datos o llenado
+                            de
+                            formularios con scripts personalizados en Python.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0">
+                    <img src="Images/designing.jpg" class="card-img-top" alt="Landing Pages">
+                    <div class="card-body">
+                        <h5 class="card-title">Páginas que Convierten</h5>
+                        <p class="card-text text-muted">Diseñamos landing pages modernas y funcionales que te ayudan a
+                            captar
+                            clientes y mejorar tu presencia online.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0">
+                    <img src="Images/data-tables.jpg" class="card-img-top" alt="Scraping Web">
+                    <div class="card-body">
+                        <h5 class="card-title">Recolección de Datos Web</h5>
+                        <p class="card-text text-muted">Obtén información valiosa desde sitios web públicos y transforma
+                            esos datos
+                            en decisiones estratégicas.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 4 (Sobre Nosotros) -->
+
+    <section class="container my-5" id="nosotros">
+        <div class="row align-items-center g-4">
+
+            <!-- Texto -->
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-4">Sobre Nosotros</h2>
+
+                <div class="mb-4">
+                    <h6 class="fw-bold">Misión</h6>
+                    <p class="text-muted mb-0">
+                        Ofrecer soluciones técnicas prácticas y automatizadas que mejoren la eficiencia y permitan a
+                        nuestros clientes enfocarse en lo que realmente importa.
+                    </p>
+                </div>
+
+                <div class="mb-4">
+                    <h6 class="fw-bold">Visión</h6>
+                    <p class="text-muted mb-0">
+                        Ser un referente confiable en servicios digitales, simplificando procesos complejos con
+                        soluciones útiles y accesibles.
+                    </p>
+                </div>
+
+                <div>
+                    <h6 class="fw-bold">Enfoque</h6>
+                    <p class="text-muted mb-0">
+                        Tecnología clara, sin complicaciones. Trabajamos contigo para lograr resultados reales y
+                        sostenibles.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Imagen -->
+            <div class="col-md-6">
+                <img src="Images/codign2.jpg" alt="Equipo AG Solutions trabajando" class="img-fluid rounded">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 5 (Preguntas Frecuentes) -->
+
+    <section class="container my-5" id="faqs">
+        <h2 class="fw-bold mb-4">Preguntas Frecuentes</h2>
+
+        <div class="mb-4">
+            <h6 class="fw-bold">¿Cuánto tiempo toma desarrollar una automatización personalizada?</h6>
+            <p class="text-muted mb-0">
+                El tiempo depende de la complejidad del proceso, pero la mayoría de los scripts están listos en 3 a 7
+                días hábiles. Siempre incluyo validación y una ronda de ajustes.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h6 class="fw-bold">¿Qué tipo de páginas web desarrollas?</h6>
+            <p class="text-muted mb-0">
+                Me especializo en landing pages funcionales y rápidas. Ideales para captar
+                leads, mostrar servicios o lanzar campañas.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h6 class="fw-bold">¿Ofreces soporte después de entregar el proyecto?</h6>
+            <p class="text-muted mb-0">
+                Sí. Todos los servicios incluyen soporte básico post-entrega (de 7 a 15 días). También ofrezco
+                mantenimiento extendido si lo necesitas.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h6 class="fw-bold">¿Qué necesito para contratar un servicio?</h6>
+            <p class="text-muted mb-0">
+                Solo contáctame con una descripción del problema o lo que quieres lograr. A partir de ahí, te envío una
+                propuesta clara y sin tecnicismos.
+            </p>
+        </div>
+
+        <div>
+            <h6 class="fw-bold">¿Qué formas de pago aceptas?</h6>
+            <p class="text-muted mb-0">
+                Acepto transferencias bancarias, PayPal y otras plataformas según el país. El pago puede ser por avance
+                o en partes, según el alcance.
+            </p>
+        </div>
+
+    </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1">&copy; 2025 AG Solutions. Todos los derechos reservados.</p>
+            <p class="mb-0">
+                <a href="mailto:agsolutions96@gmail.com"
+                    class="text-white text-decoration-none me-3">agsolutions96@gmail.com</a>
+                <a href="https://www.linkedin.com/in/abraham-alexis-gomez-arrazate/" target="_blank"
+                    class="text-white text-decoration-none">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+<script>
+    const navbar = document.getElementById("mainNavbar");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add("navbar-scrolled");
+        } else {
+            navbar.classList.remove("navbar-scrolled");
+        }
+    });
+</script>
+
+
+</html>
