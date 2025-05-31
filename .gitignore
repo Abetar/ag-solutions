@@ -1,0 +1,28 @@
+# Carpetas del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de log o temporales
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Archivos ocultos de editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de entorno o variables sensibles (por si llegas a usar herramientas externas)
+.env
+.env.local
+
+# Archivos ZIP o exportaciones locales
+*.zip
+*.tar
+*.rar
+
+# Si usas herramientas como Netlify o Vercel (opcional)
+.netlify/
+.vercel/
