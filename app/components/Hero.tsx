@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="container mx-auto grid md:grid-cols-2 gap-10 items-center py-16">
+    <section className="container mx-auto grid md:grid-cols-2 gap-10 items-center py-16" style={{ padding: '0 1.5rem' }}>
       {/* Texto con animación */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
