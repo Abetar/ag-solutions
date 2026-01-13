@@ -6,6 +6,13 @@ import Link from "next/link";
 
 const proyectos = [
   {
+    slug: "once-upon-a-deck",
+    img: "/proyectos/once_upon_a_deck.png",
+    title: "Once Upon a Deck",
+    desc: "Tienda TCG online enfocada en la venta de cartas coleccionables y experiencia de usuario clara y visual.",
+    url: "https://once-upon-a-deck.vercel.app/",
+  },
+  {
     slug: "pu-consulting",
     img: "/proyectos/PU_Consulting_card.png",
     title: "PU Consulting",
