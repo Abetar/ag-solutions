@@ -5,6 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const proyectos = [
+    {
+    slug: "chatmock-tan",
+    img: "/proyectos/ChatMock-Tan.png",
+    title: "ChatMock Tan",
+    desc: "Aplicación de chat para usuarios de tanque. Interfaz intuitiva y funcionalidad avanzada.",
+    url: "https://chatmock-tan.vercel.app/",
+  },
   {
     slug: "once-upon-a-deck",
     img: "/proyectos/once_upon_a_deck.png",
