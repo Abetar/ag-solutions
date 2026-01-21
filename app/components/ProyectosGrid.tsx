@@ -9,7 +9,7 @@ const proyectos = [
     slug: "chatmock-tan",
     img: "/proyectos/ChatMock-Tan.png",
     title: "ChatMock Tan",
-    desc: "Aplicación de chat para usuarios de tanque. Interfaz intuitiva y funcionalidad avanzada.",
+    desc: "Generador de chats ficticios para crear conversaciones realistas y personalizadas para marketing y entretenimiento.",
     url: "https://chatmock-tan.vercel.app/",
   },
   {
