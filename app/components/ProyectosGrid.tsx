@@ -5,7 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const proyectos = [
-    {
+  {
+    slug: "Web Repository",
+    img: "/proyectos/Web_Repository.png",
+    title: "Web Repository",
+    desc: "Repositorio de proyectos web. Contiene una colección de trabajos desarrollados en diferentes tecnologías y frameworks.",
+    url: "https://web-components-repository.vercel.app/explore",
+  },
+
+  {
     slug: "chatmock-tan",
     img: "/proyectos/ChatMock-Tan.png",
     title: "ChatMock Tan",
