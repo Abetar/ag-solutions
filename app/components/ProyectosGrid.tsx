@@ -6,6 +6,13 @@ import Link from "next/link";
 
 const proyectos = [
   {
+    slug: "Abraham Choel's Web Page",
+    img: "/proyectos/abraham_choel_webpage.png",
+    title: "Abraham Choel's Web Page",
+    desc: "A professional academic website designed to showcase research, teaching experience, publications, and professional achievements. Built as a digital CV and institutional presence platform with a strong focus on clarity, credibility, and accessibility.",
+    url: "https://abrahamchoel.com",
+  },
+  {
     slug: "Web Repository",
     img: "/proyectos/Web_Repository.png",
     title: "Web Repository",
