@@ -1,164 +1,372 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
-const proyectos = [
+type FeaturedProject = {
+  number: string;
+  title: string;
+  eyebrow: string;
+  question: string;
+  description: string;
+  built: string;
+  signal: string;
+  url: string;
+  accent?: "default" | "mystic";
+};
+
+type OtherProject = {
+  title: string;
+  desc: string;
+  url: string;
+};
+
+const featuredProjects: FeaturedProject[] = [
   {
-    slug: "Abraham Choel's Web Page",
-    img: "/proyectos/abraham_choel_webpage.png",
+    number: "01",
+    title: "Cuenta Clara",
+    eyebrow: "Producto · Reglas laborales · Cálculos",
+    question: "¿Cuánto dinero está realmente en juego si salgo de mi trabajo?",
+    description:
+      "Una herramienta mexicana para entender una salida laboral antes de aceptar una oferta o firmar algo. El flujo traduce conceptos como finiquito, liquidación, sueldo variable y escenarios de salida en preguntas que una persona puede responder sin conocer la terminología.",
+    built:
+      "Diseñé un flujo guiado que captura el contexto laboral, aplica reglas y cálculos según las respuestas y convierte el resultado en información que puede entenderse y compararse.",
+    signal:
+      "Demuestra lógica de producto, manejo de reglas, cálculo y diseño de una experiencia para un problema sensible y poco claro.",
+    url: "https://cuenta-clara-psi.vercel.app/",
+  },
+  {
+    number: "02",
+    title: "Mystic Studio",
+    eyebrow: "Experiencia web · UI/UX · Interacción",
+    question: "¿Cómo convertir una idea esotérica en una experiencia digital?",
+    description:
+      "Un estudio místico interactivo construido alrededor del tarot y distintas prácticas esotéricas. Combina una biblioteca completa de 78 cartas con lecturas, galletas del destino, limpias y un grimorio dentro de una experiencia visual coherente.",
+    built:
+      "Construí tanto la experiencia de exploración como la arquitectura de contenido detrás de las cartas y prácticas, procurando que cada parte se sienta como parte del mismo producto y no como herramientas independientes.",
+    signal:
+      "Es el proyecto que mejor demuestra frontend, dirección visual, interacción y capacidad para construir una identidad digital desde cero.",
+    url: "https://mysticstudio-sable.vercel.app/",
+    accent: "mystic",
+  },
+  {
+    number: "03",
+    title: "México en Números",
+    eyebrow: "Datos públicos · Visualización · Producto",
+    question: "¿Dónde estoy parado económicamente frente a otros mexicanos?",
+    description:
+      "Una experiencia interactiva que utiliza edad, ubicación e ingreso mensual para dar contexto a la situación económica de una persona frente a estadísticas de México.",
+    built:
+      "Transformé datos y métricas económicas en comparaciones más fáciles de interpretar, utilizando un flujo progresivo que primero captura contexto y después presenta los resultados desde distintos ángulos.",
+    signal:
+      "Demuestra trabajo con datos, modelado de comparaciones y diseño de información para convertir cifras abstractas en algo personal y comprensible.",
+    url: "https://mexico-en-numeros.vercel.app/",
+  },
+  {
+    number: "04",
+    title: "Entre Farmacias",
+    eyebrow: "Datos · Comparación · Normalización",
+    question: "¿Dónde está más barato este medicamento?",
+    description:
+      "Un comparador mexicano que permite buscar medicamentos por marca o principio activo y revisar precios publicados por distintas cadenas de farmacias.",
+    built:
+      "Organicé medicamentos, principios activos, presentaciones, cadenas y precios para poder comparar productos que no siempre son publicados de la misma forma por cada farmacia.",
+    signal:
+      "Demuestra estructuración y normalización de datos alrededor de una necesidad extremadamente concreta: comparar opciones rápidamente.",
+    url: "https://entre-farmacias.vercel.app/",
+  },
+];
+
+const otherProjects: OtherProject[] = [
+  {
     title: "Abraham Choel's Web Page",
-    desc: "A professional academic website designed to showcase research, teaching experience, publications, and professional achievements. Built as a digital CV and institutional presence platform with a strong focus on clarity, credibility, and accessibility.",
+    desc: "Sitio académico y profesional para organizar investigación, publicaciones, docencia y trayectoria.",
     url: "https://abrahamchoel.com",
   },
   {
-    slug: "Web Repository",
-    img: "/proyectos/Web_Repository.png",
-    title: "Web Repository",
-    desc: "Repositorio de proyectos web. Contiene una colección de trabajos desarrollados en diferentes tecnologías y frameworks.",
-    url: "https://web-components-repository.vercel.app/explore",
-  },
-
-  {
-    slug: "chatmock-tan",
-    img: "/proyectos/ChatMock-Tan.png",
     title: "ChatMock Tan",
-    desc: "Generador de chats ficticios para crear conversaciones realistas y personalizadas para marketing y entretenimiento.",
+    desc: "Generador de conversaciones ficticias personalizables para contenido y demostraciones.",
     url: "https://chatmock-tan.vercel.app/",
   },
   {
-    slug: "once-upon-a-deck",
-    img: "/proyectos/once_upon_a_deck.png",
     title: "Once Upon a Deck",
-    desc: "Tienda TCG online enfocada en la venta de cartas coleccionables y experiencia de usuario clara y visual.",
+    desc: "Experiencia de e-commerce enfocada en cartas coleccionables TCG.",
     url: "https://once-upon-a-deck.vercel.app/",
   },
   {
-    slug: "pu-consulting",
-    img: "/proyectos/PU_Consulting_card.png",
     title: "PU Consulting",
-    desc: "Sitio institucional para firma de consultoría técnica en construcción. Enfoque en eficiencia operativa y toma de decisiones.",
+    desc: "Sitio institucional para una firma de consultoría técnica en construcción.",
     url: "https://pu-consulting-site.vercel.app/",
   },
   {
-    slug: "casa-cora",
-    img: "/proyectos/Casa_Cora_Logo.png",
     title: "Casa Cora",
-    desc: "Fundación de psicoterapia económica. Acompañamiento accesible con enfoque integrativo y terapias alternativas.",
+    desc: "Sitio para una fundación de psicoterapia accesible y acompañamiento psicológico.",
     url: "https://www.casacora.org",
   },
   {
-    slug: "capillarte",
-    img: "/proyectos/CAPILLARTE_LOGO.png",
-    title: "Capillarte.com",
-    desc: "Clínica de injerto capilar FUE Zafiro. Video hero, galería optimizada y diseño orientado a confianza y resultados.",
+    title: "Capillarte",
+    desc: "Experiencia web para clínica especializada en injerto capilar FUE Zafiro.",
     url: "https://www.capillarte.com",
   },
   {
-    slug: "calculadora-de-salario-neto",
-    img: "/proyectos/Calcula tu salario neto.png",
     title: "Calculadora de Salario Neto",
-    desc: "Herramienta para calcular el salario neto de empleados en Argentina, considerando deducciones y aportes.",
+    desc: "Aplicación Android para estimar salario neto considerando deducciones y aportes.",
     url: "https://play.google.com/store/apps/details?id=com.agsolutions.calculadora_sueldo",
   },
   {
-    slug: "entre-cuentas",
-    img: "/proyectos/Entre_Cuentas_Grafico_Funciones.png",
     title: "Entre Cuentas",
-    desc: "Aplicación para la gestión de gastos compartidos. Facilita el seguimiento de cuentas y la división de gastos entre amigos.",
+    desc: "Aplicación Android para controlar y dividir gastos compartidos.",
     url: "https://play.google.com/store/apps/details?id=com.agsolution.entrecuentas",
   },
   {
-    slug: "entre-cuentas-tandas",
-    img: "/proyectos/Entre cuentas Tandas.png",
-    title: "Entre Cuentas - Tandas",
-    desc: "Entre Cuentas: Tandas es una app diseñada para ayudarte a llevar un control sencillo, claro y sin complicaciones de las Tandas para Android.",
+    title: "Entre Cuentas · Tandas",
+    desc: "Aplicación Android para llevar el control de tandas de forma sencilla.",
     url: "https://play.google.com/store/apps/details?id=com.agsolutions.tandas",
   },
+  {
+    title: "Web Repository",
+    desc: "Archivo de experimentos y proyectos desarrollados con distintas tecnologías web.",
+    url: "https://web-components-repository.vercel.app/explore",
+  },
 ];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-80px" },
+};
 
 export default function ProyectosGrid() {
   return (
     <>
-      {/* Título */}
+      {/* =========================================================
+          INTRO
+      ========================================================== */}
       <motion.header
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center space-y-3"
+        className="max-w-5xl"
       >
-        <h1 className="text-3xl md:text-4xl font-bold">Proyectos</h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Selección de trabajos recientes. Construimos sitios rápidos, claros y
-          con foco en conversión.
+        <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-gray-950 md:text-5xl lg:text-6xl">
+          Productos digitales,
+          <span className="block text-gray-400">
+            no solamente páginas web.
+          </span>
+        </h1>
+
+        <p className="mt-7 max-w-2xl text-base leading-7 text-gray-600 md:text-lg md:leading-8">
+          Diseño y desarrollo herramientas que convierten problemas, datos e
+          ideas en productos que una persona realmente puede utilizar.
         </p>
       </motion.header>
 
-      {/* Grid */}
-      <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {proyectos.map((p, i) => (
-          <motion.article
-            key={p.slug}
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition"
-          >
-            {p.img && (
-              <div className="relative h-48">
-                <Image
-                  src={p.img}
-                  alt={p.title}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                  priority={i === 0}
-                />
-              </div>
-            )}
+      {/* =========================================================
+          FEATURED PROJECTS
+      ========================================================== */}
+      <section className="mt-16 border-t border-gray-200 md:mt-24">
+        {featuredProjects.map((project, index) => {
+          const isMystic = project.accent === "mystic";
 
-            <div className="p-6 flex flex-col gap-3 flex-1">
-              <h2 className="text-xl font-semibold">{p.title}</h2>
-              <p className="text-sm text-gray-600">{p.desc}</p>
+          return (
+            <motion.article
+              key={project.title}
+              {...fadeUp}
+              transition={{
+                duration: 0.55,
+                delay: Math.min(index * 0.05, 0.15),
+              }}
+              className="group border-b border-gray-200 py-12 md:py-16 lg:py-20"
+            >
+              <div className="grid gap-8 md:grid-cols-[120px_minmax(0,1fr)] lg:grid-cols-[150px_minmax(0,1fr)]">
+                {/* Número */}
+                <div>
+                  <span
+                    className={`text-sm font-medium tracking-[0.18em] ${
+                      isMystic ? "text-violet-600" : "text-gray-400"
+                    }`}
+                  >
+                    {project.number}
+                  </span>
+                </div>
 
-              <div className="mt-auto pt-2">
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded bg-black text-white text-sm font-medium hover:bg-gray-800 transition"
-                >
-                  Visitar proyecto
-                </a>
+                {/* Contenido */}
+                <div>
+                  <div className="grid gap-10 xl:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] xl:gap-20">
+                    {/* Columna principal */}
+                    <div>
+                      <p
+                        className={`mb-4 text-xs font-semibold uppercase tracking-[0.18em] ${
+                          isMystic ? "text-violet-600" : "text-blue-600"
+                        }`}
+                      >
+                        {project.eyebrow}
+                      </p>
+
+                      <h2 className="text-3xl font-bold tracking-tight text-gray-950 md:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
+                        {project.title}
+                      </h2>
+
+                      <p className="mt-6 max-w-2xl text-xl font-medium leading-8 text-gray-900 md:text-2xl md:leading-9">
+                        {project.question}
+                      </p>
+
+                      <p className="mt-6 max-w-2xl text-base leading-7 text-gray-600">
+                        {project.description}
+                      </p>
+
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`mt-8 inline-flex min-h-11 items-center border-b-2 pb-1 text-sm font-semibold transition-colors ${
+                          isMystic
+                            ? "border-violet-600 text-violet-700 hover:border-violet-400 hover:text-violet-600"
+                            : "border-gray-950 text-gray-950 hover:border-blue-600 hover:text-blue-600"
+                        }`}
+                      >
+                        Explorar proyecto
+                        <span
+                          aria-hidden="true"
+                          className="ml-2 transition-transform duration-200 group-hover:translate-x-1"
+                        >
+                          ↗
+                        </span>
+                      </a>
+                    </div>
+
+                    {/* Qué demuestra */}
+                    <aside className="xl:border-l xl:border-gray-200 xl:pl-10">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gray-400">
+                          Qué construí
+                        </p>
+
+                        <p className="mt-3 text-sm leading-6 text-gray-700">
+                          {project.built}
+                        </p>
+                      </div>
+
+                      <div className="mt-8 border-t border-gray-200 pt-8">
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gray-400">
+                          Qué demuestra
+                        </p>
+
+                        <p className="mt-3 text-sm leading-6 text-gray-700">
+                          {project.signal}
+                        </p>
+                      </div>
+                    </aside>
+                  </div>
+                </div>
               </div>
-            </div>
-          </motion.article>
-        ))}
+            </motion.article>
+          );
+        })}
       </section>
 
-      {/* CTA inferior */}
+      {/* =========================================================
+          OTHER WORK
+      ========================================================== */}
       <motion.section
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.45 }}
-        className="text-center pt-6"
+        {...fadeUp}
+        transition={{ duration: 0.5 }}
+        className="mt-20 md:mt-28"
       >
-        <div className="inline-flex flex-wrap gap-4">
-          <Link
-            href="/servicios"
-            className="px-6 py-3 rounded border border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 transition"
-          >
-            Ver servicios
-          </Link>
-          <Link
-            href="/contacto"
-            className="px-6 py-3 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
-          >
-            Solicitar propuesta
-          </Link>
+        <div className="grid gap-6 border-b border-gray-950 pb-7 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+              Más trabajo
+            </p>
+
+            <h2 className="text-2xl font-bold tracking-tight text-gray-950 md:text-3xl">
+              Otros proyectos
+            </h2>
+          </div>
+
+          <p className="max-w-md text-sm leading-6 text-gray-500 md:text-right">
+            Sitios, aplicaciones y experimentos desarrollados para clientes,
+            productos propios y exploraciones personales.
+          </p>
+        </div>
+
+        <div>
+          {otherProjects.map((project, index) => (
+            <motion.a
+              key={project.title}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.35,
+                delay: Math.min(index * 0.025, 0.15),
+              }}
+              className="group grid gap-3 border-b border-gray-200 py-6 transition-colors hover:border-gray-400 md:grid-cols-[minmax(220px,0.7fr)_minmax(0,1fr)_auto] md:items-center md:gap-8"
+            >
+              <h3 className="text-base font-semibold text-gray-950 transition-colors group-hover:text-blue-600">
+                {project.title}
+              </h3>
+
+              <p className="max-w-2xl text-sm leading-6 text-gray-500">
+                {project.desc}
+              </p>
+
+              <span className="flex items-center text-sm font-medium text-gray-400 transition-colors group-hover:text-gray-950">
+                Visitar
+                <span
+                  aria-hidden="true"
+                  className="ml-2 transition-transform duration-200 group-hover:translate-x-1"
+                >
+                  ↗
+                </span>
+              </span>
+            </motion.a>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* =========================================================
+          FINAL CTA
+      ========================================================== */}
+      <motion.section
+        {...fadeUp}
+        transition={{ duration: 0.5 }}
+        className="mt-24 border-t border-gray-200 pt-16 md:mt-32 md:pt-20"
+      >
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
+              ¿Tienes una idea?
+            </p>
+
+            <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight text-gray-950 md:text-4xl">
+              Si el problema es real, podemos convertirlo en producto.
+            </h2>
+
+            <p className="mt-5 max-w-xl text-base leading-7 text-gray-600">
+              Desde una herramienta interna hasta una experiencia pública,
+              puedo ayudarte a definir, diseñar y desarrollar la solución.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/servicios"
+              className="inline-flex min-h-12 items-center justify-center border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 transition-colors hover:border-gray-950"
+            >
+              Ver servicios
+            </Link>
+
+            <Link
+              href="/contacto"
+              className="inline-flex min-h-12 items-center justify-center bg-gray-950 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600"
+            >
+              Hablemos
+            </Link>
+          </div>
         </div>
       </motion.section>
     </>
