@@ -58,6 +58,14 @@ const proyectos: Project[] = [
     desc: "Herramienta interactiva que compara el poder adquisitivo del dinero en México a través del tiempo usando inflación y referencias de precios cotidianos.",
     link: "https://cuanto-valia.vercel.app/",
   },
+   {
+    number: "06",
+    title: "ChatMock",
+    category: "Frontend · Herramienta · Contenido",
+    question: "¿Cómo crear conversaciones ficticias de forma rápida?",
+    desc: "Herramienta para generar conversaciones simuladas y personalizables, pensada para contenido, demostraciones y escenarios ficticios.",
+    link: "https://chatmock-tan.vercel.app/",
+  },
 ];
 
 export default function Proyectos() {
