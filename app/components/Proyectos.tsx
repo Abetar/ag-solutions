@@ -50,6 +50,14 @@ const proyectos: Project[] = [
     desc: "Comparador que organiza medicamentos, presentaciones y precios publicados por distintas cadenas de farmacias.",
     link: "https://entre-farmacias.vercel.app/",
   },
+  {
+    number: "05",
+    title: "¿Cuánto valía?",
+    category: "Datos · Inflación · Historia",
+    question: "¿Cuánto valdría hoy el dinero de otro año?",
+    desc: "Herramienta interactiva que compara el poder adquisitivo del dinero en México a través del tiempo usando inflación y referencias de precios cotidianos.",
+    link: "https://cuanto-valia.vercel.app/",
+  },
 ];
 
 export default function Proyectos() {
@@ -155,9 +163,9 @@ export default function Proyectos() {
               transition={{ duration: 0.45, delay: index * 0.08 }}
               viewport={{ once: true, margin: "-60px" }}
               className={`group py-10 md:py-12 ${
-                index === 0
-                  ? "border-b border-gray-300 md:border-b-0 md:border-r md:pr-10"
-                  : "md:pl-10"
+                index % 2 === 0
+                  ? "border-b border-gray-300 md:border-r md:pr-10"
+                  : "border-b border-gray-300 md:pl-10"
               }`}
             >
               <div className="flex items-start justify-between gap-6">
