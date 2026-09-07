@@ -75,6 +75,19 @@ const featuredProjects: FeaturedProject[] = [
       "Demuestra estructuración y normalización de datos alrededor de una necesidad extremadamente concreta: comparar opciones rápidamente.",
     url: "https://entre-farmacias.vercel.app/",
   },
+  {
+    number: "05",
+    title: "¿Cuánto valía?",
+    eyebrow: "Inflación · Datos históricos · Visualización",
+    question: "¿Cuánto valdría hoy el dinero de otro año?",
+    description:
+      "Una herramienta interactiva para entender cómo ha cambiado el valor del dinero en México a través del tiempo, utilizando inflación y referencias de precios cotidianos.",
+    built:
+      "Construí una experiencia que permite seleccionar distintos años, ajustar cantidades y comparar el poder adquisitivo histórico con productos y precios de referencia.",
+    signal:
+      "Demuestra trabajo con datos históricos, transformación de información económica y diseño de una experiencia que vuelve tangible un concepto abstracto como la inflación.",
+    url: "https://cuanto-valia.vercel.app/",
+  },
 ];
 
 const otherProjects: OtherProject[] = [
@@ -150,9 +163,7 @@ export default function ProyectosGrid() {
       >
         <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-gray-950 md:text-5xl lg:text-6xl">
           Productos digitales,
-          <span className="block text-gray-400">
-            no solamente páginas web.
-          </span>
+          <span className="block text-gray-400">no solamente páginas web.</span>
         </h1>
 
         <p className="mt-7 max-w-2xl text-base leading-7 text-gray-600 md:text-lg md:leading-8">
@@ -347,8 +358,8 @@ export default function ProyectosGrid() {
             </h2>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-gray-600">
-              Desde una herramienta interna hasta una experiencia pública,
-              puedo ayudarte a definir, diseñar y desarrollar la solución.
+              Desde una herramienta interna hasta una experiencia pública, puedo
+              ayudarte a definir, diseñar y desarrollar la solución.
             </p>
           </div>
 
